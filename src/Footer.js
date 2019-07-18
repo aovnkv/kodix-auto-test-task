@@ -3,7 +3,7 @@ import './Footer.scss';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <div className="copyright">
         <p>@2015 CAPTAIN QUACK</p>
         <p>Десница тысячелетия и моллюск!</p>

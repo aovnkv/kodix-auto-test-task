@@ -2,7 +2,76 @@
 
 .newCar--form {
   margin: 30px 0;
+
   input {
+    position: relative;
+    padding: 0;
+    display: block;
+    width: calc(100% - 10px);
+    height: 40px;
+    border: 1px solid #dcdcdc;
+    border-bottom-width: 2px;
+    padding-left: 10px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #111;
+    }
+    &:focus + label {
+      top: 0;
+      margin-top: -23px;
+      transform: none;
+    }
+  }
+
+  &-row1,
+  &-row2,
+  &-row3 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
     margin: 0 0 30px 0;
+
+    input + label {
+      cursor: pointer;
+      position: absolute;
+      text-align: left;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 10px);
+      transition: 0.2s;
+      color: #999;
+      font-size: 12px;
+      padding: 5px 0 5px 10px;
+      line-height: 0.9;
+    }
+  }
+  &-title {
+    margin-bottom: 30px;
+  }
+  &-title,
+  &-compl {
+    position: relative;
+    width: 100%;
+  }
+  &-price,
+  &-year {
+    position: relative;
+    width: calc(50% - 12px);
+  }
+
+  &-colors {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    label {
+      visibility: hidden;
+    }
   }
 }
