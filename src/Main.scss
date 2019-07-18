@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+.main {
+  position: relative;
+
+  &--title {
+    font-size: 41px;
+    line-height: 1;
+    color: $charcoal;
+    margin: 35px auto;
+  }
+}

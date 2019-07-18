@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @font-face {
   font-family: 'PK&co';
   font-style: normal;
@@ -9,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #282d30;
+  background: $charcoal;
   height: 5em;
   min-height: 81px;
 
