@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'PK&co';
+  font-style: normal;
+  font-weight: normal;
+  src: local('./typeface/PK&co'), url('./typeface/PK&co.woff') format('woff');
+}
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #282d30;
+  height: 5em;
+  min-height: 81px;
+
+  &--wrapper {
+    position: relative;
+  }
+  &--logo {
+    position: absolute;
+    width: 47px;
+    height: auto;
+    left: -34px;
+    top: -4px;
+    object-fit: contain;
+  }
+  &--name {
+    font-family: 'PK&co';
+    font-size: 31px;
+    color: #fff;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.51);
+  }
+}

@@ -1,14 +1,12 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './Header';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img className="App-header-logo" alt="logo" title="logo" />
-        <div className="App-header-name">Captain Quack</div>
-      </header>
-      <main className="App-main">
+      <Header />
+      <main className="main">
         <h1>¡Ay caramba!</h1>
         <section className="newCar">
           <form className="newCar-form">
