@@ -4,7 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header" />
+      <header className="App-header">
+        <img className="App-header-logo" alt="logo" title="logo" />
+        <div className="App-header-name">Captain Quack</div>
+      </header>
       <main className="App-main">
         <h1>¡Ay caramba!</h1>
         <section className="newCar">
@@ -64,7 +67,14 @@ function App() {
             <input type="submit" value="Отправить" />
           </form>
         </section>
+        <section className="carsList" />
       </main>
+      <footer>
+        <div className="copyright">
+          <p>@2015 CAPTAIN QUACK</p>
+          <p>Десница тысячелетия и моллюск!</p>
+        </div>
+      </footer>
     </div>
   );
 }
