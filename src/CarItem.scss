@@ -1,6 +1,6 @@
 .carItem {
   position: relative;
-  padding: 20px 20px 18px;
+  padding: 20px;
   margin: 0 -10px;
 
   background: #f5f6f6;
@@ -10,16 +10,23 @@
   color: #282d30;
   text-align: left;
 
+  &:not(:last-child) {
+    border-bottom: 1px solid #989898;
+  }
+
   &--row1,
   &--row2,
   &--row3 {
     position: relative;
     display: flex;
     margin: 0 0 20px 0;
+
+    line-height: 1;
   }
 
   &--row3 {
     margin: 0;
+    align-items: center;
   }
 
   &--main {
@@ -30,22 +37,24 @@
   &--color {
     width: 20px;
     height: 20px;
-    margin: auto 20px auto 0;
+    margin: 0 20px 0 0;
     flex-shrink: 0;
+    border-radius: 50%;
   }
 
-  &--option {
+  &--options {
     font-size: 13px;
     color: #8b9497;
   }
   &--year-and-status-wrapper {
     display: flex;
+    align-self: flex-start;
     justify-content: space-between;
     width: 42.5%;
   }
 
   &--delete {
-    margin: 0 0 0 auto;
+    margin: -10px 0 0 auto;
     padding: 10px;
 
     font-family: inherit;
@@ -58,5 +67,7 @@
 
     border-radius: 33px;
     border: 0;
+
+    cursor: pointer;
   }
 }

@@ -1,25 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './CarItem.scss';
 
-const CarItem = () => {
-  return (
-    <div className="carItem">
+const CarItem = props => {
+  const { main, color, price, options, year, status } = props;
+  const background =
+    color === 'white' || color === '#fff'
+      ? { background: color, border: '1px solid #ddd' }
+      : { background: color };
+  const row1 = () => {
+    return (
       <div className="carItem--row1">
-        <div className="carItem--main">1.6 MT Ambiente Plus 105 л.с. МКПП</div>
-        <div className="carItem--color" />
-        <div className="carItem--price">1 189 900 руб.</div>
+        <div className="carItem--main">{main}</div>
+        <div className="carItem--color" style={background} />
+        <div className="carItem--price">{price}</div>
       </div>
-
-      <div className="carItem--row2">
-        <div className="carItem--option">
-          + доп. опция «Радио-навигационная система Amundasen 2DIN, CD, MP3»
+    );
+  };
+  const row2 = () => {
+    if (options.length) {
+      return (
+        <div className="carItem--row2">
+          <div className="carItem--options">{options}</div>
         </div>
-      </div>
-
+      );
+    }
+  };
+  const row3 = () => {
+    return (
       <div className="carItem--row3">
         <div className="carItem--year-and-status-wrapper">
-          <div className="carItem--year">2012</div>
-          <div className="carItem--status">Ожидается</div>
+          <div className="carItem--year">{year}</div>
+          <div className="carItem--status">{status}</div>
         </div>
         <button
           type="button"
@@ -30,6 +41,13 @@ const CarItem = () => {
           Удалить
         </button>
       </div>
+    );
+  };
+  return (
+    <div className="carItem">
+      {row1()}
+      {row2()}
+      {row3()}
     </div>
   );
 };

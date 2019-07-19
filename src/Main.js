@@ -10,9 +10,7 @@ export default function Main() {
       <section className="newCar">
         <Form />
       </section>
-      <section className="carsList">
-        <CarsList />
-      </section>
+      <CarsList />
     </main>
   );
 }
