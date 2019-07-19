@@ -4,5 +4,59 @@
   margin: 0 -10px;
 
   background: #f5f6f6;
-  height: 154px;
+
+  font-size: 14px;
+  font-weight: 300;
+  color: #282d30;
+  text-align: left;
+
+  &--row1,
+  &--row2,
+  &--row3 {
+    position: relative;
+    display: flex;
+    margin: 0 0 20px 0;
+  }
+
+  &--row3 {
+    margin: 0;
+  }
+
+  &--main {
+    width: 42.5%;
+    margin: 0 13.75% 0 0;
+  }
+
+  &--color {
+    width: 20px;
+    height: 20px;
+    margin: auto 20px auto 0;
+    flex-shrink: 0;
+  }
+
+  &--option {
+    font-size: 13px;
+    color: #8b9497;
+  }
+  &--year-and-status-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 42.5%;
+  }
+
+  &--delete {
+    margin: 0 0 0 auto;
+    padding: 10px;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+
+    color: #fff;
+    background: #282d30;
+    line-height: 0.8;
+
+    border-radius: 33px;
+    border: 0;
+  }
 }

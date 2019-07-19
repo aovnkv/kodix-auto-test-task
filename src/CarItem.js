@@ -11,12 +11,16 @@ const CarItem = () => {
       </div>
 
       <div className="carItem--row2">
-        <div className="carItem--option" />
+        <div className="carItem--option">
+          + доп. опция «Радио-навигационная система Amundasen 2DIN, CD, MP3»
+        </div>
       </div>
 
       <div className="carItem--row3">
-        <div className="carItem--year">2012</div>
-        <div className="carItem--status">Ожидается</div>
+        <div className="carItem--year-and-status-wrapper">
+          <div className="carItem--year">2012</div>
+          <div className="carItem--status">Ожидается</div>
+        </div>
         <button
           type="button"
           name="delete"
