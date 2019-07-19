@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="copyright">
-        <p>@2015 CAPTAIN QUACK</p>
+        <p>&copy; 2015 CAPTAIN QUACK</p>
         <p>Десница тысячелетия и моллюск!</p>
       </div>
     </footer>

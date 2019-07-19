@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.scss';
 import Form from './Form';
+import CarsList from './CarsList';
 
 export default function Main() {
   return (
@@ -9,7 +10,9 @@ export default function Main() {
       <section className="newCar">
         <Form />
       </section>
-      <section className="carsList" />
+      <section className="carsList">
+        <CarsList />
+      </section>
     </main>
   );
 }
