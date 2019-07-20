@@ -10,3 +10,11 @@
     margin: 35px auto;
   }
 }
+
+@media all and (min-width: 720px) {
+  .main {
+    &--title {
+      margin: 67px auto 57px;
+    }
+  }
+}

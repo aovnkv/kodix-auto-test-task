@@ -6,6 +6,7 @@
   font-weight: normal;
   src: local('./typeface/PK&co'), url('./typeface/PK&co.woff') format('woff');
 }
+
 .header {
   position: relative;
   display: flex;
@@ -29,8 +30,25 @@
   }
   &--name {
     font-family: 'PK&co';
-    font-size: 31px;
+    font-size: 33px;
+    line-height: 1.1;
     color: #fff;
     text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.51);
+  }
+}
+
+@media all and (min-width: 720px) {
+  .header {
+    height: 102px;
+
+    &--logo {
+      width: 79px;
+      left: -52px;
+      top: -1px;
+    }
+
+    &--name {
+      font-size: 54px;
+    }
   }
 }

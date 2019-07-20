@@ -7,6 +7,7 @@ const CarItem = props => {
     color === 'white' || color === '#fff'
       ? { background: color, border: '1px solid #ddd' }
       : { background: color };
+
   const row1 = () => {
     return (
       <div className="carItem--row1">
@@ -16,6 +17,7 @@ const CarItem = props => {
       </div>
     );
   };
+
   const row2 = () => {
     if (options.length) {
       return (
@@ -25,6 +27,7 @@ const CarItem = props => {
       );
     }
   };
+
   const row3 = () => {
     return (
       <div className="carItem--row3">
@@ -43,6 +46,7 @@ const CarItem = props => {
       </div>
     );
   };
+
   return (
     <div className="carItem">
       {row1()}

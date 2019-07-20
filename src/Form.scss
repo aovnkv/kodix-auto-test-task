@@ -90,6 +90,7 @@
     color: #999;
 
     legend {
+      padding: 0;
       margin-bottom: 10px;
     }
   }
@@ -239,6 +240,52 @@
         width: 8px;
         height: 18px;
       }
+    }
+  }
+}
+
+@media all and (min-width: 720px) {
+  .newCar--form {
+    &--row1,
+    &--row3 {
+      flex-wrap: nowrap;
+    }
+
+    &--row2 {
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      width: 33.333%;
+      margin: 0 20px 0 0;
+    }
+
+    &-price {
+      width: 33.333%;
+      order: 1;
+    }
+
+    &-year {
+      width: 33.333%;
+      margin: 0 20px 0 0;
+    }
+
+    fieldset,
+    &-status {
+      margin-right: 20px;
+      width: 33.333%;
+    }
+
+    fieldset {
+      margin-top: -15px;
+    }
+
+    &--color {
+      margin: 0;
+    }
+
+    &-submit {
+      width: 33.333%;
     }
   }
 }
