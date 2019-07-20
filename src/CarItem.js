@@ -3,28 +3,19 @@ import './CarItem.scss';
 
 const CarItem = props => {
   const { main, color, price, options, year, status } = props;
+
   const background =
     color === 'white' || color === '#fff'
       ? { background: color, border: '1px solid #ddd' }
       : { background: color };
 
   const row1 = () => {
-    return (
-      <div className="carItem--row1">
-        <div className="carItem--main">{main}</div>
-        <div className="carItem--color" style={background} />
-        <div className="carItem--price">{price}</div>
-      </div>
-    );
+    return <div className="carItem--row1" />;
   };
 
-  const row2 = () => {
+  const optionsElement = () => {
     if (options.length) {
-      return (
-        <div className="carItem--row2">
-          <div className="carItem--options">{options}</div>
-        </div>
-      );
+      return <div className="carItem--options">{options}</div>;
     }
   };
 
@@ -35,23 +26,26 @@ const CarItem = props => {
           <div className="carItem--year">{year}</div>
           <div className="carItem--status">{status}</div>
         </div>
-        <button
-          type="button"
-          name="delete"
-          value="Удалить"
-          className="carItem--delete"
-        >
-          Удалить
-        </button>
       </div>
     );
   };
 
   return (
     <div className="carItem">
-      {row1()}
-      {row2()}
-      {row3()}
+      <div className="carItem--main">{main}</div>
+      <div className="carItem--color" style={background} />
+      <div className="carItem--price">{price}</div>
+      {optionsElement()}
+      <div className="carItem--year">{year}</div>
+      <div className="carItem--status">{status}</div>
+      <button
+        type="button"
+        name="delete"
+        value="Удалить"
+        className="carItem--delete"
+      >
+        Удалить
+      </button>
     </div>
   );
 };

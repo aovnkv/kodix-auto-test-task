@@ -1,3 +1,53 @@
+@import './variables.scss';
+
 .carsList {
   position: relative;
+
+  &--header,
+  &--title {
+    display: none;
+  }
+}
+
+@media all and (min-width: 720px) {
+  .carsList {
+    text-align: left;
+    line-height: 1.2;
+
+    &--title {
+      position: relative;
+      display: block;
+
+      font-size: 20px;
+      text-transform: uppercase;
+
+      color: $charcoal;
+
+      margin: 0 auto 26px 0px;
+      padding-left: 15px;
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 18px;
+        background: #8b9497;
+      }
+    }
+    &--header {
+      display: flex;
+      justify-content: space-between;
+
+      background: $red;
+      color: #fff;
+
+      padding: 15px;
+
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
 }
