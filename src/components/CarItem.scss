@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import './mixins.scss';
+@import '../css/variables.scss';
+@import '../css/mixins.scss';
 
 .carItem {
   position: relative;
@@ -80,9 +80,9 @@
 
 @media all and (min-width: 720px) {
   .carItem {
-    padding: 10px 20px 10px 15px;
+    padding: 20px 20px 10px 15px;
     margin: 0;
-    align-items: center;
+    //align-items: center;
 
     &--name {
       @include name-col-size;
@@ -110,7 +110,8 @@
 
     &--delete {
       order: 5;
-      margin: 0 0 0 auto;
+      align-self: flex-start;
+      margin: -8px 0 0 auto;
     }
 
     &--options {

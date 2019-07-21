@@ -1,9 +1,9 @@
 import React from 'react';
 import './Header.scss';
 
-import img from './img/duck.png';
-import img2x from './img/duck@2x.png';
-import img3x from './img/duck@3x.png';
+import img from '../img/duck.png';
+import img2x from '../img/duck@2x.png';
+import img3x from '../img/duck@3x.png';
 
 const Header = () => {
   return (

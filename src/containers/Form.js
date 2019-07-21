@@ -4,6 +4,7 @@ import './Form.scss';
 class Form extends Component {
   render() {
     return (
+      <section className="newCar">
       <form className="newCar--form">
         <div className="newCar--form--row1">
           <div className="newCar--form-title">
@@ -80,6 +81,7 @@ class Form extends Component {
           </button>
         </div>
       </form>
+      </section>
     );
   }
 }

@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import '../css/variables.scss';
 
 .newCar--form {
   margin: 30px 0;
@@ -119,7 +119,18 @@
         box-shadow: 0 0 0 4px $red;
       }
 
+      &:hover + label::before {
+        border-color: $red;
+        box-shadow: 0 0 0 4px $red;
+      }
+
       &:checked + .newCar--form--color-white::before {
+        border: 0;
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover + .newCar--form--color-white::before {
         border: 0;
         width: 20px;
         height: 20px;
@@ -184,7 +195,7 @@
       top: calc(50% - 4px);
       width: 12px;
       height: 6px;
-      background: url('./img/rectangle-1.svg') no-repeat 100% 0 / 12px 6px;
+      background: url('../img/rectangle-1.svg') no-repeat 100% 0 / 12px 6px;
     }
 
     select {
@@ -207,6 +218,10 @@
 
       -webkit-appearance: none;
       -webkit-border-radius: 0px;
+
+      &:hover {
+        border-bottom-color: $red;
+      }
 
       &:focus {
         outline: none;
@@ -258,7 +273,7 @@
         content: '';
         right: 0;
         top: 0;
-        background: url('./img/arrow-small-right.svg') no-repeat 100% 50% / 8px
+        background: url('../img/arrow-small-right.svg') no-repeat 100% 50% / 8px
           12px;
         width: 8px;
         height: 18px;

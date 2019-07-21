@@ -1,10 +1,10 @@
-@import './variables.scss';
+@import '../css/variables.scss';
 
 @font-face {
   font-family: 'PK&co';
   font-style: normal;
   font-weight: normal;
-  src: local('./typeface/PK&co'), url('./typeface/PK&co.woff') format('woff');
+  src: local('../typeface/PK&co'), url('../typeface/PK&co.woff') format('woff');
 }
 
 .header {
