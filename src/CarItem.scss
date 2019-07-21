@@ -1,3 +1,6 @@
+@import './variables.scss';
+@import './mixins.scss';
+
 .carItem {
   position: relative;
   display: flex;
@@ -9,46 +12,44 @@
 
   font-size: 14px;
   font-weight: 300;
-  color: #282d30;
+  color: $charcoal;
   text-align: left;
-  line-height: 1;
+  line-height: 1.2;
 
   &:not(:last-child) {
-    border-bottom: 1px solid #989898;
+    border-bottom: 1px solid rgba(152, 152, 152, 0.2);
   }
 
-  &--main {
-    width: 42.5%;
-    margin: 0 13.75% 0 0;
+  &--name {
+    width: 47.5%;
+    margin: 0 0 20px;
+    line-height: 1.4;
   }
 
   &--color {
     width: 20px;
     height: 20px;
-    margin: 0 20px 0 0;
+    margin: 0 20px 20px;
     flex-shrink: 0;
     border-radius: 50%;
   }
 
-  &--price,
-  &--main {
-    margin-bottom: 20px;
+  &--price {
+    width: calc(33.75% - 10px);
+    line-height: 1.4;
+    margin: 0 10px 20px auto;
+    text-align: right;
   }
 
   &--options {
     font-size: 13px;
-    color: #8b9497;
-
+    color: $palegray;
+    width: 100%;
     margin: 0 0 20px 0;
   }
 
   &--year {
-    width: 10%;
-  }
-
-  &--status {
-    text-align: right;
-    width: 32.5%;
+    width: 18.75%;
   }
 
   &--delete {
@@ -58,23 +59,91 @@
     padding: 10px;
 
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
 
-    color: #fff;
-    background: #282d30;
-    line-height: 0.8;
+    color: $palegray;
+    line-height: 1;
+    background: transparent;
 
-    border-radius: 33px;
     border: 0;
 
     cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background: $charcoal;
+      border-radius: 33px;
+    }
   }
 }
 
 @media all and (min-width: 720px) {
   .carItem {
-    padding: 20px 20px 20px 15px;
+    padding: 10px 20px 10px 15px;
     margin: 0;
+    align-items: center;
+
+    &--name {
+      @include name-col-size;
+    }
+    &--year {
+      order: 1;
+      @include year-col-size;
+    }
+
+    &--color {
+      order: 2;
+      margin: 0 10px;
+    }
+
+    &--status {
+      order: 3;
+      @include status-col-size;
+    }
+
+    &--price {
+      order: 4;
+      text-align: left;
+      @include price-col-size;
+    }
+
+    &--delete {
+      order: 5;
+      margin: 0 0 0 auto;
+    }
+
+    &--options {
+      order: 6;
+      @include name-col-size;
+    }
+  }
+}
+
+@media all and (min-width: 960px) {
+  .carItem {
+    &--name,
+    &--options {
+      width: 45%;
+    }
+
+    &--status,
+    &--price {
+      width: 11%;
+    }
+  }
+}
+
+@media all and (max-width: 359px) {
+  .carItem {
+    &--name {
+      width: 43.5%;
+    }
+    &--color {
+      margin: 0 10px 20px;
+    }
+    &--price {
+      width: 34%;
+    }
   }
 }

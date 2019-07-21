@@ -52,3 +52,10 @@
     }
   }
 }
+
+@media all and (min-width: 1024px) {
+  .header {
+    width: 100vw;
+    margin: 0;
+  }
+}

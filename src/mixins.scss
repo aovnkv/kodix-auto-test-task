@@ -1,0 +1,19 @@
+@mixin name-col-size {
+  width: 36%;
+  margin: 0;
+}
+
+@mixin year-col-size {
+  margin: 0 3%;
+  width: 5%;
+}
+
+@mixin status-col-size {
+  width: 14%;
+  margin: 0 3%;
+}
+
+@mixin price-col-size {
+  margin: 0;
+  width: 15%;
+}

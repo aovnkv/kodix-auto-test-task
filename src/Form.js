@@ -31,6 +31,8 @@ class Form extends Component {
           <fieldset>
             <legend>Цвет</legend>
             <div className="newCar--form--color">
+              {/* TODO: red border intersects app container to the left when white's :checked */}
+              {/* TODO: checked state is not toggling */}
               <input type="radio" id="_white" name="white" value="white" />
               <label className="newCar--form--color-white" htmlFor="_white">
                 Белый
@@ -57,7 +59,7 @@ class Form extends Component {
               </label>
             </div>
           </fieldset>
-
+          {/* TODO: customise select */}
           <div className="newCar--form-status">
             <select id="_status">
               <option value="">Статус</option>
@@ -72,7 +74,10 @@ class Form extends Component {
             className="newCar--form-submit"
             type="submit"
             name="newCar--form-submit"
-            value="submit"><span className="newCar--form-submit-text">Отправить</span></button>
+            value="submit"
+          >
+            <span className="newCar--form-submit-text">Отправить</span>
+          </button>
         </div>
       </form>
     );

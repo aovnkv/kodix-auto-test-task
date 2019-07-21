@@ -1,10 +1,11 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .carsList {
   position: relative;
-
-  &--header,
-  &--title {
+  margin-bottom: 5vh;
+  &-header,
+  &-title {
     display: none;
   }
 }
@@ -14,7 +15,7 @@
     text-align: left;
     line-height: 1.2;
 
-    &--title {
+    &-title {
       position: relative;
       display: block;
 
@@ -37,17 +38,39 @@
         background: #8b9497;
       }
     }
-    &--header {
+    &-header {
       display: flex;
-      justify-content: space-between;
 
       background: $red;
       color: #fff;
 
-      padding: 15px;
+      padding: 15px 20px 15px 15px;
 
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
+
+      &-col--name {
+        @include name-col-size;
+      }
+
+      &-col--year {
+        @include year-col-size;
+        text-align: center;
+      }
+
+      &-col--color {
+        width: 40px;
+        margin: 0;
+        text-align: center;
+      }
+
+      &-col--status {
+        @include status-col-size;
+      }
+
+      &-col--price {
+        @include price-col-size;
+      }
     }
   }
 }
