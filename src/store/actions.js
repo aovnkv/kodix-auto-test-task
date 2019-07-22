@@ -1,14 +1,30 @@
 import fetch from 'cross-fetch';
+
 /*
  * action types
  */
 
-export const CARS_FETCHED = 'CARS_FETCHED';
-export const REQUEST_CARS = 'REQUEST_CARS';
+export const GET_CARS_SUCCESS = 'GET_CARS_SUCCESS';
+export const GET_CARS_REQUEST = 'GET_CARS_REQUEST';
+export const GET_CARS_FAILURE = 'GET_CARS_FAILURE';
+
+export const DELETE_CAR = 'DELETE_CAR';
+export const ADD_CAR = 'ADD_CAR';
 
 /*
  * action creators
  */
+
+const requestCars = () => ({ type: GET_CARS_REQUEST });
+const throwError = err => ({ type: GET_CARS_FAILURE, errorObj: err });
+
+export function deleteCar(id) {
+  return dispatch => dispatch({ type: DELETE_CAR, id: id });
+}
+
+export function addCar(data) {
+  return dispatch => dispatch({ type: ADD_CAR, newCar: data });
+}
 
 export function fetchCars() {
   const url =
@@ -19,10 +35,10 @@ export function fetchCars() {
     in_stock: 'В наличии'
   };
   return dispatch => {
-    dispatch({ type: REQUEST_CARS });
+    dispatch(requestCars());
 
     return fetch(url)
-      .then(res => res.json(), err => console.log('An error occurred.', err))
+      .then(res => res.json())
       .then(json => {
         const cars = json.map(car => {
           if (car.status in status_translates) {
@@ -30,7 +46,15 @@ export function fetchCars() {
           }
           return car;
         });
-        dispatch({ type: CARS_FETCHED, payload: cars });
+        dispatch({
+          type: GET_CARS_SUCCESS,
+          payload: cars,
+          lastID: cars[cars.length - 1].id
+        });
+      })
+      .catch(err => {
+        console.dir('An error occurred.', err);
+        dispatch(throwError(err));
       });
   };
 }

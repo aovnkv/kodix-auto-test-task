@@ -7,12 +7,13 @@ import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
 
-import * as reducers from './store/reducers';
-import { fetchCars } from './store/actions';
+import reduce from './store/reducers';
+//import { fetchCars } from './store/actions';
 
 const logger = createLogger();
 const store = createStore(
-  combineReducers(reducers),
+  // combineReducers({ reduce }),
+  reduce,
   applyMiddleware(thunk, logger)
 );
 

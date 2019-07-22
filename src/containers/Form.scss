@@ -32,7 +32,8 @@
         border-bottom-color: #111;
       }
 
-      &:focus + label {
+      &:focus + label,
+      &:valid + label {
         top: 0;
         margin-top: -23px;
         transform: none;
