@@ -18,3 +18,10 @@
     }
   }
 }
+
+@media all and (min-width: 1024px) {
+  .main {
+    margin: 0 auto;
+    width: 1000px;
+  }
+}

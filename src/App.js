@@ -4,8 +4,6 @@ import Main from './containers/Main';
 import Footer from './components/Footer';
 import './App.scss';
 
-// TODO: Header and Footer margin issue in >1024px
-
 const App = () => (
   <div className="App">
     <Header />

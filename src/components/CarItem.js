@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as actions from '../store/actions';
 import './CarItem.scss';
 
@@ -32,6 +33,16 @@ const CarItem = props => {
       </button>
     </div>
   );
+};
+
+CarItem.propTypes = {
+  color: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired
 };
 
 export default connect()(CarItem);

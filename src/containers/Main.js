@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as actions from '../store/actions';
 import './Main.scss';
 import Form from './Form';
@@ -33,8 +34,23 @@ class Main extends Component {
   }
 }
 
+Main.propTypes = {
+  cars: PropTypes.arrayOf(
+    PropTypes.shape({
+      color: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      id: PropTypes.number.isRequired,
+      price: PropTypes.number.isRequired,
+      status: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired
+    }).isRequired
+  ).isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  error: PropTypes.instanceOf(Object)
+};
+
 function mapStateToProps(state) {
-  //const { cars, isFetching, error } = state;
   return { ...state };
 }
 

@@ -1,34 +1,70 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as selectors from '../store/reducers';
 import * as actions from '../store/actions';
 
 import './Form.scss';
 
 class Form extends Component {
-  state = {};
+  initialState = {
+    title: '',
+    price: '',
+    year: '',
+    description: '',
+    color: '',
+    status: ''
+  };
+
+  state = { ...this.initialState };
 
   handleSubmit = event => {
     event.preventDefault();
     const data = this.state;
     this.props.dispatch(actions.addCar(data));
+    this.setState({ ...this.initialState });
   };
 
   handleChange = event => {
     const target = event.target;
-    //const value = target.type === 'radio' ? target.checked : target.value;
-    const value = target.value;
     const name = target.name;
+    let value;
 
-    this.setState({
-      [name]: value
-    });
+    switch (target.name) {
+      case 'price':
+        value = Number(target.value.replace(/\D/g, ''));
+        value = value.toLocaleString('ru');
+        this.setState(state => {
+          if (value.length <= 10) {
+            return { [name]: value };
+          } else {
+            return state;
+          }
+        });
+        break;
+
+      case 'year':
+        value = Number(target.value.replace(/\D/g, ''));
+        const validYear = '/^(19|20)d{2}$/';
+        this.setState(state => {
+          if (target.value.length <= 4) {
+            return { [name]: value };
+          } else {
+            return state;
+          }
+        });
+        break;
+
+      default:
+        value = target.value;
+        this.setState({
+          [name]: value
+        });
+    }
   };
 
   render() {
     return (
       <section className="newCar">
-        <form onSubmit={this.handleSubmit} className="newCar--form" id="newCar">
+        <form onSubmit={this.handleSubmit} className="newCar--form" noValidate>
           <div className="newCar--form--row1">
             <div className="newCar--form-title">
               <input
@@ -37,16 +73,18 @@ class Form extends Component {
                 id="_title"
                 value={this.state.title}
                 onChange={this.handleChange}
+                required
               />
               <label htmlFor="_title">Название</label>
             </div>
             <div className="newCar--form-price">
               <input
                 name="price"
-                type="number"
+                type="text"
                 id="_price"
                 value={this.state.price}
                 onChange={this.handleChange}
+                required
               />
               <label htmlFor="_price">Цена</label>
             </div>
@@ -57,6 +95,7 @@ class Form extends Component {
                 id="_year"
                 value={this.state.year}
                 onChange={this.handleChange}
+                required
               />
               <label htmlFor="_year">Год</label>
             </div>
@@ -70,6 +109,7 @@ class Form extends Component {
                 id="_compl"
                 value={this.state.description}
                 onChange={this.handleChange}
+                required
               />
               <label htmlFor="_compl">Описание</label>
             </div>
@@ -144,6 +184,7 @@ class Form extends Component {
                 value={this.state.status}
                 onChange={this.handleChange}
                 id="_status"
+                required
               >
                 <option value="">Статус</option>
                 <option value="В наличии">В наличии</option>
