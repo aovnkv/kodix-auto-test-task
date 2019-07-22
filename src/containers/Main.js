@@ -1,41 +1,39 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as carsActions from '../store/actions';
+import * as carsSelectors from '../store/reducers';
 import './Main.scss';
 import Form from './Form';
 import CarsList from './CarsList';
 
-export default class Main extends Component {
-  state = { cars: [] };
-
+class Main extends Component {
   componentDidMount() {
-    const url =
-      'https://rawgit.com/Varinetz/e6cbadec972e76a340c41a65fcc2a6b3/raw/90191826a3bac2ff0761040ed1d95c59f14eaf26/frontend_test_table.json';
+    this.props.dispatch(carsActions.fetchCars());
+  }
 
-    const status_translates = {
-      pednding: 'Ожидается',
-      out_of_stock: 'Нет в наличии',
-      in_stock: 'В наличии'
-    };
-
-    fetch(url)
-      .then(data => data.json())
-      .then(json => {
-        json.forEach(obj =>
-          obj.status in status_translates
-            ? (obj.status = status_translates[obj.status])
-            : obj.status
-        );
-        this.setState({ cars: json });
-      })
-      .catch(err => console.error(err));
+  renderLoading() {
+    return <p>Loading...</p>;
   }
 
   render() {
+    if (this.props.isFetching) return this.renderLoading();
     return (
       <main className="main">
         <h1 className="main--title">¡Ay caramba!</h1>
         <Form />
-        <CarsList cars={this.state.cars} />
+        <CarsList cars={this.props.cars} />
       </main>
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { cars, isFetching } = state;
+  return {
+    cars,
+    isFetching
+    //cars: carsSelectors.getCars(state)
+  };
+}
+
+export default connect(mapStateToProps)(Main);

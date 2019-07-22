@@ -3,7 +3,7 @@ import './CarsList.scss';
 import CarItem from '../components/CarItem';
 
 const CarsList = props => {
-  //console.dir(cars);
+  console.dir(props);
   const items = props.cars.map(car => <CarItem key={car.id} {...car} />);
   return (
     <section className="carsList">
