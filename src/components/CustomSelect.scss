@@ -1,0 +1,92 @@
+@import '../css/variables.scss';
+
+.select-box {
+  position: relative;
+  width: calc(50% - 12px);
+
+  font-size: 12px;
+  font-family: $font;
+  color: #999;
+  text-align: left;
+
+  cursor: pointer;
+
+  &--inner {
+    position: relative;
+    display: block;
+
+    height: 40px;
+    border: 1px solid #dcdcdc;
+    border-bottom-width: 2px;
+    padding-left: 10px;
+
+    &:hover {
+      border-bottom-color: $red;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #111;
+    }
+
+    &:focus .select-box--label {
+      top: 0;
+      margin-top: -23px;
+      transform: none;
+    }
+  }
+
+  &--arrow-down {
+    position: absolute;
+    content: '';
+    right: 17px;
+    top: calc(50% - 4px);
+    width: 12px;
+    height: 6px;
+    background: url('../img/rectangle-1.svg') no-repeat 100% 0 / 12px 6px;
+    transition: 0.2s;
+  }
+
+  &--arrow-up {
+    position: absolute;
+    content: '';
+    right: 17px;
+    top: calc(50% - 4px);
+    width: 12px;
+    height: 6px;
+    background: url('../img/rectangle-1.svg') no-repeat 100% 0 / 12px 6px;
+    transform: rotate(180deg);
+    transition: 0.2s;
+  }
+
+  &--label {
+    position: absolute;
+
+    text-align: left;
+    line-height: 0.9;
+
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 10px);
+    padding: 5px 0 5px 10px;
+
+    transition: 0.2s;
+  }
+
+  &--outer {
+    padding: 13px 10px 15px;
+    border: 1px solid #dcdcdc;
+    border-top: 0;
+  }
+
+  &--option {
+    &:not(:last-child) {
+      padding-bottom: 10px;
+    }
+    &:hover {
+      color: black;
+    }
+  }
+}

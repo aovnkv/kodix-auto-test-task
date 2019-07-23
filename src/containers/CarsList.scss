@@ -55,7 +55,7 @@
 
       &-col--year {
         @include year-col-size;
-        text-align: center;
+        text-align: left;
       }
 
       &-col--color {
@@ -70,6 +70,21 @@
 
       &-col--price {
         @include price-col-size;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 960px) {
+  .carsList {
+    &-header {
+      &-col--name {
+        width: 45%;
+      }
+      &-col--status,
+      &-col--price {
+        width: 11%;
       }
     }
   }

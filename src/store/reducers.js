@@ -34,7 +34,10 @@ function reduce(state = initialState, action) {
         ...state,
         cars: [
           ...cars,
-          { ...action.newCar, id: lastID !== undefined ? lastID + 1 : 0 }
+          {
+            ...action.newCar,
+            id: lastID !== undefined ? lastID + 1 : 0
+          }
         ],
         lastID: lastID + 1
       };

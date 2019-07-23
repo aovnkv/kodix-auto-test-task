@@ -1,10 +1,10 @@
 @import '../css/variables.scss';
 
-.newCar--form {
+.newCar-form {
   margin: 30px 0;
 
-  &--row1,
-  &--row2 {
+  &-row1,
+  &-row2 {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +16,7 @@
       position: relative;
       padding: 0;
       display: block;
-      width: calc(100% - 10px);
+      width: calc(100% - 12px);
       height: 40px;
       border: 1px solid #dcdcdc;
       border-bottom-width: 2px;
@@ -48,7 +48,6 @@
       transform: translateY(-50%);
       bottom: 0;
       left: 0;
-      width: calc(100% - 10px);
       transition: 0.2s;
       color: #999;
       font-size: 12px;
@@ -57,11 +56,11 @@
     }
   }
 
-  &--row2 {
+  &-row2 {
     margin-bottom: 20px;
   }
 
-  &--row3 {
+  &-row3 {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -70,16 +69,16 @@
     margin: 0 0 54px 0;
   }
 
-  &-title {
+  &--title {
     margin-bottom: 30px;
   }
-  &-title,
-  &-compl {
+  &--title,
+  &--compl {
     position: relative;
     width: 100%;
   }
-  &-price,
-  &-year {
+  &--price,
+  &--year {
     position: relative;
     width: calc(50% - 12px);
   }
@@ -99,13 +98,13 @@
     color: #999;
 
     legend {
-      padding: 0 0 10px 0;
+      padding: 0 0 10px 4px;
     }
   }
   &--color {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin: 0 0 30px 4px;
     width: 100%;
 
     input {
@@ -125,13 +124,13 @@
         box-shadow: 0 0 0 4px $red;
       }
 
-      &:checked + .newCar--form--color-white::before {
+      &:checked + .newCar-form--color-white::before {
         border: 0;
         width: 20px;
         height: 20px;
       }
 
-      &:hover + .newCar--form--color-white::before {
+      &:hover + .newCar-form--color-white::before {
         border: 0;
         width: 20px;
         height: 20px;
@@ -143,7 +142,7 @@
       margin: 0 23px 0 0;
       font-size: 0;
 
-      &.newCar--form--color-white::before {
+      &.newCar-form--color-white::before {
         width: 18px;
         height: 18px;
         background: #fff;
@@ -179,14 +178,14 @@
     }
   }
 
-  &-status,
-  &-submit {
+  &--status,
+  &--submit {
     position: relative;
     width: calc(50% - 12px);
     cursor: pointer;
   }
 
-  &-status {
+  &--status {
     height: 40px;
 
     &::after {
@@ -249,7 +248,7 @@
     // }
   }
 
-  &-submit {
+  &--submit {
     position: relative;
     height: 40px;
     padding: 0;
@@ -288,33 +287,33 @@
 }
 
 @media all and (min-width: 720px) {
-  .newCar--form {
-    &--row1,
-    &--row3 {
+  .newCar-form {
+    &-row1,
+    &-row3 {
       flex-wrap: nowrap;
     }
 
-    &--row2 {
+    &-row2 {
       margin-bottom: 30px;
     }
 
-    &-title {
+    &--title {
       width: 33.333%;
       margin: 0 20px 0 0;
     }
 
-    &-price {
+    &--price {
       width: 33.333%;
       order: 1;
     }
 
-    &-year {
+    &--year {
       width: 33.333%;
       margin: 0 20px 0 0;
     }
 
     fieldset,
-    &-status {
+    &--status {
       margin-right: 20px;
       width: 33.333%;
     }
@@ -324,10 +323,10 @@
     }
 
     &--color {
-      margin: 0;
+      margin: 0 0 0 4px;
     }
 
-    &-submit {
+    &--submit {
       width: 33.333%;
     }
   }
