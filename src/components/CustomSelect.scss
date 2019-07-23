@@ -2,14 +2,11 @@
 
 .select-box {
   position: relative;
-  width: calc(50% - 12px);
 
   font-size: 12px;
   font-family: $font;
   color: #999;
   text-align: left;
-
-  cursor: pointer;
 
   &--inner {
     position: relative;
@@ -17,14 +14,16 @@
 
     height: 40px;
     border: 1px solid #dcdcdc;
-    border-bottom-width: 2px;
+    border-bottom: 0;
+    box-shadow: 0 2px 0 0 #dcdcdc;
     padding-left: 10px;
 
     &:hover {
-      border-bottom-color: $red;
+      box-shadow: 0 2px 0 0 $red;
     }
 
-    &:focus {
+    &:focus,
+    ._open & {
       outline: none;
       border-bottom-color: #111;
     }
@@ -36,7 +35,7 @@
     }
   }
 
-  &--arrow-down {
+  &--arrow {
     position: absolute;
     content: '';
     right: 17px;
@@ -45,21 +44,14 @@
     height: 6px;
     background: url('../img/rectangle-1.svg') no-repeat 100% 0 / 12px 6px;
     transition: 0.2s;
+
+    ._open & {
+      transform: rotate(180deg);
+    }
   }
 
-  &--arrow-up {
-    position: absolute;
-    content: '';
-    right: 17px;
-    top: calc(50% - 4px);
-    width: 12px;
-    height: 6px;
-    background: url('../img/rectangle-1.svg') no-repeat 100% 0 / 12px 6px;
-    transform: rotate(180deg);
-    transition: 0.2s;
-  }
-
-  &--label {
+  &--label,
+  &--selectedItem {
     position: absolute;
 
     text-align: left;
@@ -75,10 +67,33 @@
     transition: 0.2s;
   }
 
+  &--label {
+    ._open &,
+    ._selected & {
+      top: 0;
+      margin-top: -23px;
+      transform: none;
+    }
+  }
+
+  &--selectedItem {
+    color: #111;
+  }
+
   &--outer {
+    position: absolute;
+    box-sizing: border-box;
+
+    top: 41px;
+    left: 0;
+    width: 100%;
     padding: 13px 10px 15px;
     border: 1px solid #dcdcdc;
     border-top: 0;
+    box-shadow: 0 -2px 0px 0px #111;
+
+    background: #fff;
+    z-index: 11;
   }
 
   &--option {

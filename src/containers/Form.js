@@ -36,11 +36,12 @@ class Form extends Component {
 
     switch (target.name) {
       case 'price':
-        if (this.state[name] !== '') {
-          value = Number(target.value.replace(/\D/g, '')).toLocaleString('ru');
-        } else {
-          value = target.value;
-        }
+        this.state[name]
+          ? (value = Number(target.value.replace(/\D/g, '')).toLocaleString(
+              'ru'
+            ))
+          : (value = target.value);
+
         this.setState(state => {
           if (value.length <= 10) {
             return { [name]: value };
@@ -70,16 +71,13 @@ class Form extends Component {
     }
   };
 
+  selectItem = item => {
+    this.setState({ status: item.value });
+  };
+
   render() {
     return (
       <section className="newCar">
-        <CustomSelect
-          items={[
-            { value: 'В наличии', id: 1 },
-            { value: 'Ожидается', id: 2 },
-            { value: 'Нет в наличии', id: 3 }
-          ]}
-        />
         <form onSubmit={this.handleSubmit} className="newCar-form" noValidate>
           <div className="newCar-form-row1">
             <div className="newCar-form--title">
@@ -197,21 +195,15 @@ class Form extends Component {
               </div>
             </fieldset>
 
-            {/* TODO: customise select */}
             <div className="newCar-form--status">
-              <select
-                name="status"
-                value={this.state.status}
-                onChange={this.handleChange}
-                className="newCar-form--status-select custom-select"
-                required
-              >
-                <option value="">Статус</option>
-                <option value="В наличии">В наличии</option>
-                <option value="Ожидается">Ожидается</option>
-                <option value="Нет в наличии">Нет в наличии</option>
-              </select>
-              <label htmlFor="_status">Статус</label>
+              <CustomSelect
+                items={[
+                  { value: 'В наличии', id: 1 },
+                  { value: 'Ожидается', id: 2 },
+                  { value: 'Нет в наличии', id: 3 }
+                ]}
+                selectItem={this.selectItem}
+              />
             </div>
 
             <button

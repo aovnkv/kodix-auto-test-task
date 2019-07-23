@@ -19,17 +19,19 @@
       width: calc(100% - 12px);
       height: 40px;
       border: 1px solid #dcdcdc;
-      border-bottom-width: 2px;
+      border-bottom: 0;
+      box-shadow: 0 2px 0 0 #dcdcdc;
       padding-left: 10px;
       cursor: pointer;
 
       &:hover {
-        border-bottom-color: $red;
+        box-shadow: 0 2px 0 0 $red;
       }
 
       &:focus {
         outline: none;
-        border-bottom-color: #111;
+        color: #111;
+        box-shadow: 0 2px 0 0 #111;
       }
 
       &:focus + label,
@@ -183,69 +185,6 @@
     position: relative;
     width: calc(50% - 12px);
     cursor: pointer;
-  }
-
-  &--status {
-    height: 40px;
-
-    &::after {
-      position: absolute;
-      content: '';
-      right: 17px;
-      top: calc(50% - 4px);
-      width: 12px;
-      height: 6px;
-      background: url('../img/rectangle-1.svg') no-repeat 100% 0 / 12px 6px;
-    }
-
-    select {
-      position: relative;
-      padding: 0 0 0 10px;
-      display: block;
-      background: transparent;
-
-      height: 100%;
-      width: 100%;
-
-      font-size: 12px;
-      font-family: $font;
-      color: #999;
-
-      border: 1px solid #dcdcdc;
-      border-bottom-width: 2px;
-
-      cursor: pointer;
-
-      -webkit-appearance: none;
-      -webkit-border-radius: 0px;
-
-      &:hover {
-        border-bottom-color: $red;
-      }
-
-      &:focus {
-        outline: none;
-        border-bottom-color: #111;
-      }
-    }
-
-    select + label {
-      font-size: 0;
-    }
-
-    // select + option {
-    //   //cursor: pointer;
-    //   //position: absolute;
-    //   text-align: left;
-    //   //top: 50%;
-    //   //transform: translateY(-50%);
-    //   bottom: 0;
-    //   left: 0;
-    //   width: calc(100% - 10px);
-    //   transition: 0.2s;
-    //   //padding: 5px 0 5px 10px;
-    //   //line-height: 0.9;
-    // }
   }
 
   &--submit {
