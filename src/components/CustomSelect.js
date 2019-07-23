@@ -4,15 +4,16 @@ import './CustomSelect.scss';
 class CustomSelect extends Component {
   state = {
     selectedItem: '',
-    items: this.props.items || [],
     showItems: false
   };
 
   handleClick = () =>
     this.setState(prevState => ({ showItems: !prevState.showItems }));
 
-  selectItem = item =>
+  selectItem = item => {
     this.setState({ selectedItem: item.value, showItems: false });
+    this.props.selectItem(item.value);
+  };
 
   render() {
     return (
@@ -38,7 +39,7 @@ class CustomSelect extends Component {
           className="select-box--outer"
           style={{ display: this.state.showItems ? 'block' : 'none' }}
         >
-          {this.state.items.map(item => (
+          {this.props.items.map(item => (
             <div
               onClick={() => this.selectItem(item)}
               className={`select-box--option ${
@@ -50,12 +51,7 @@ class CustomSelect extends Component {
             </div>
           ))}
         </div>
-        <input
-          type="hidden"
-          value={this.state.selectedItem}
-          name="status"
-          onChange={this.props.selectItem}
-        />
+        <input type="hidden" value={this.state.selectedItem} name="status" />
       </div>
     );
   }

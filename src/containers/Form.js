@@ -71,8 +71,8 @@ class Form extends Component {
     }
   };
 
-  selectItem = item => {
-    this.setState({ status: item.value });
+  statusUpdate = item => {
+    this.setState({ status: item });
   };
 
   render() {
@@ -202,7 +202,7 @@ class Form extends Component {
                   { value: 'Ожидается', id: 2 },
                   { value: 'Нет в наличии', id: 3 }
                 ]}
-                selectItem={this.selectItem}
+                selectItem={this.statusUpdate}
               />
             </div>
 
