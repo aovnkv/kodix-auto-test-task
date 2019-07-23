@@ -103,81 +103,12 @@
       padding: 0 0 10px 4px;
     }
   }
+
   &--color {
     display: flex;
     align-items: center;
     margin: 0 0 30px 4px;
     width: 100%;
-
-    input {
-      margin: 0;
-      position: absolute;
-      height: 20px;
-      width: 20px;
-      visibility: hidden;
-
-      &:checked + label::before {
-        border-color: $red;
-        box-shadow: 0 0 0 4px $red;
-      }
-
-      &:hover + label::before {
-        border-color: $red;
-        box-shadow: 0 0 0 4px $red;
-      }
-
-      &:checked + .newCar-form--color-white::before {
-        border: 0;
-        width: 20px;
-        height: 20px;
-      }
-
-      &:hover + .newCar-form--color-white::before {
-        border: 0;
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    label {
-      position: relative;
-      margin: 0 23px 0 0;
-      font-size: 0;
-
-      &.newCar-form--color-white::before {
-        width: 18px;
-        height: 18px;
-        background: #fff;
-        border: solid 1px #ddd;
-      }
-    }
-
-    label:before {
-      content: '';
-      display: block;
-
-      height: 20px;
-      width: 20px;
-
-      border-radius: 50%;
-
-      background-clip: content-box;
-
-      cursor: pointer;
-    }
-
-    &-black::before {
-      background: #000;
-    }
-    &-gray::before {
-      background: #cbcbcc;
-    }
-    &-red::before {
-      background: #d74345;
-    }
-    &-green::before {
-      background: #88c504;
-    }
   }
 
   &--status,

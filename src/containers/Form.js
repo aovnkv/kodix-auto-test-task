@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions';
 import CustomSelect from '../components/CustomSelect';
+import ColorInput from '../components/ColorInput';
+
 import './Form.scss';
 
 class Form extends Component {
@@ -76,6 +78,21 @@ class Form extends Component {
   };
 
   render() {
+    const colorInputs = [
+      { color: 'white', id: 1 },
+      { color: 'black', id: 2 },
+      { color: 'gray', id: 3 },
+      { color: 'red', id: 4 },
+      { color: 'green', id: 5 }
+    ].map(input => (
+      <ColorInput
+        handleChange={this.handleChange}
+        color={input.color}
+        key={input.id}
+        checkedColor={this.state.color}
+      />
+    ));
+
     return (
       <section className="newCar">
         <form onSubmit={this.handleSubmit} className="newCar-form" noValidate>
@@ -132,67 +149,7 @@ class Form extends Component {
           <div className="newCar-form-row3">
             <fieldset>
               <legend>Цвет</legend>
-              <div className="newCar-form--color">
-                <input
-                  type="radio"
-                  id="white"
-                  name="color"
-                  value="white"
-                  onChange={this.handleChange}
-                  checked={this.state.color === 'white'}
-                />
-                <label className="newCar-form--color-white" htmlFor="white">
-                  Белый
-                </label>
-
-                <input
-                  type="radio"
-                  id="black"
-                  name="color"
-                  value="black"
-                  onChange={this.handleChange}
-                  checked={this.state.color === 'black'}
-                />
-                <label className="newCar-form--color-black" htmlFor="black">
-                  Черный
-                </label>
-
-                <input
-                  type="radio"
-                  id="gray"
-                  name="color"
-                  value="gray"
-                  onChange={this.handleChange}
-                  checked={this.state.color === 'gray'}
-                />
-                <label className="newCar-form--color-gray" htmlFor="gray">
-                  Серый
-                </label>
-
-                <input
-                  type="radio"
-                  id="red"
-                  name="color"
-                  value="red"
-                  onChange={this.handleChange}
-                  checked={this.state.color === 'red'}
-                />
-                <label className="newCar-form--color-red" htmlFor="red">
-                  Красный
-                </label>
-
-                <input
-                  type="radio"
-                  id="green"
-                  name="color"
-                  value="green"
-                  onChange={this.handleChange}
-                  checked={this.state.color === 'green'}
-                />
-                <label className="newCar-form--color-green" htmlFor="green">
-                  Зеленый
-                </label>
-              </div>
+              <div className="newCar-form--color">{colorInputs}</div>
             </fieldset>
 
             <div className="newCar-form--status">
