@@ -3,7 +3,6 @@ import './CustomSelect.scss';
 
 class CustomSelect extends Component {
   state = {
-    selectedItem: this.props.status,
     showItems: false
   };
 
@@ -19,7 +18,7 @@ class CustomSelect extends Component {
     return (
       <div
         className={`select-box ${this.state.showItems ? '_open' : ''} ${
-          this.state.selectedItem ? '_selected' : ''
+          this.props.status ? '_selected' : ''
         }`}
       >
         <div onClick={this.handleClick} className="select-box--inner">
@@ -27,10 +26,10 @@ class CustomSelect extends Component {
           <span
             className="select-box--selectedItem"
             style={{
-              visibility: this.state.selectedItem ? 'visible' : 'hidden'
+              visibility: this.props.status ? 'visible' : 'hidden'
             }}
           >
-            {this.state.selectedItem}
+            {this.props.status}
           </span>
           <div className="select-box--arrow" />
         </div>
@@ -43,7 +42,7 @@ class CustomSelect extends Component {
             <div
               onClick={() => this.selectItem(item)}
               className={`select-box--option ${
-                this.state.selectedItem === item.value ? 'selected' : ''
+                this.props.status === item.value ? 'selected' : ''
               }`}
               key={item.id}
             >
@@ -51,7 +50,7 @@ class CustomSelect extends Component {
             </div>
           ))}
         </div>
-        <input type="hidden" value={this.state.selectedItem} name="status" />
+        <input type="hidden" value={this.props.status} name="status" />
       </div>
     );
   }
