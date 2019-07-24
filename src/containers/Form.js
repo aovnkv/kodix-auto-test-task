@@ -109,7 +109,7 @@ class Form extends Component {
                 onChange={this.handleChange}
                 required
               />
-              <label htmlFor="_title">Название</label>
+              <label htmlFor="title">Название</label>
             </div>
             <div className="newCar-form--price">
               <input
