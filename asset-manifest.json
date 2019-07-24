@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/kodix-ultimate-test/static/css/main.e973c8de.chunk.css",
+    "main.js": "/kodix-ultimate-test/static/js/main.770efd8c.chunk.js",
+    "main.js.map": "/kodix-ultimate-test/static/js/main.770efd8c.chunk.js.map",
+    "runtime~main.js": "/kodix-ultimate-test/static/js/runtime~main.8e67689b.js",
+    "runtime~main.js.map": "/kodix-ultimate-test/static/js/runtime~main.8e67689b.js.map",
+    "static/js/2.bc1f5e88.chunk.js": "/kodix-ultimate-test/static/js/2.bc1f5e88.chunk.js",
+    "static/js/2.bc1f5e88.chunk.js.map": "/kodix-ultimate-test/static/js/2.bc1f5e88.chunk.js.map",
+    "index.html": "/kodix-ultimate-test/index.html",
+    "precache-manifest.7319313b032692f55f12fb993fb520a7.js": "/kodix-ultimate-test/precache-manifest.7319313b032692f55f12fb993fb520a7.js",
+    "service-worker.js": "/kodix-ultimate-test/service-worker.js",
+    "static/css/main.e973c8de.chunk.css.map": "/kodix-ultimate-test/static/css/main.e973c8de.chunk.css.map",
+    "static/media/Header.scss": "/kodix-ultimate-test/static/media/PK&co.97be6335.woff",
+    "static/media/Form.scss": "/kodix-ultimate-test/static/media/arrow-small-right.6ae214a2.svg",
+    "static/media/duck.png": "/kodix-ultimate-test/static/media/duck.ad2bc8d3.png",
+    "static/media/duck@2x.png": "/kodix-ultimate-test/static/media/duck@2x.19166b1f.png",
+    "static/media/duck@3x.png": "/kodix-ultimate-test/static/media/duck@3x.f5a8286c.png",
+    "static/media/CustomSelect.scss": "/kodix-ultimate-test/static/media/rectangle-1.64e2a3f3.svg"
+  }
+}
