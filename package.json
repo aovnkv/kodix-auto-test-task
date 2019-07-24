@@ -1,6 +1,7 @@
 {
-  "name": "test-task",
+  "name": "kodix-ultimate-test",
   "version": "0.1.0",
+  "homepage": "http://aovnkv.github.io/kodix-ultimate-test",
   "private": true,
   "dependencies": {
     "cross-fetch": "^3.0.4",
