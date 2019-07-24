@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import 'react-app-polyfill/ie10';
+import 'react-app-polyfill/ie9';
 import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
