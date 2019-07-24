@@ -24,8 +24,7 @@ class Form extends Component {
     this.props.dispatch(
       actions.addCar({
         ...data,
-        year: +this.state.year,
-        price: +this.state.price
+        year: +this.state.year
       })
     );
     this.setState({ ...this.initialState });
@@ -34,16 +33,16 @@ class Form extends Component {
   handleChange = event => {
     const target = event.target;
     const name = target.name;
+    console.log(name);
     let value;
 
     switch (target.name) {
       case 'price':
-        this.state[name]
-          ? (value = Number(target.value.replace(/\D/g, '')).toLocaleString(
-              'ru'
-            ))
-          : (value = target.value);
-
+        if (target.value) {
+          value = Number(target.value.replace(/\D/g, '')).toLocaleString('ru');
+        } else {
+          value = '';
+        }
         this.setState(state => {
           if (value.length <= 10) {
             return { [name]: value };
@@ -51,11 +50,15 @@ class Form extends Component {
             return state;
           }
         });
+
         break;
 
       case 'year':
-        value = Number(target.value.replace(/\D/g, ''));
-        //const validYear = '/^(19|20)d{2}$/';
+        if (target.value) {
+          value = Number(target.value.replace(/\D/g, ''));
+        } else {
+          value = '';
+        }
         this.setState(state => {
           if (target.value.length <= 4) {
             return { [name]: value };
@@ -160,6 +163,7 @@ class Form extends Component {
                   { value: 'Нет в наличии', id: 3 }
                 ]}
                 selectItem={this.statusUpdate}
+                status={this.state.status}
               />
             </div>
 

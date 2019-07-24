@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import './ColorInput.scss';
 
 class ColorInput extends Component {
-  // handleChange(e) {
-  //   this.props.handleChange(e.target.value);
-  // }
-
   render() {
     return (
       <>
         <input
           type="radio"
           name="color"
+          id={this.props.color}
           value={this.props.color}
           onChange={this.props.handleChange}
           className="color-input"

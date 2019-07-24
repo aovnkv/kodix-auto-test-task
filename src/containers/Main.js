@@ -12,7 +12,7 @@ class Main extends Component {
   }
 
   renderLoading() {
-    return <p>Loading...</p>;
+    return <h1>Loading...</h1>;
   }
 
   somethingWrong(err) {
@@ -40,7 +40,7 @@ Main.propTypes = {
       color: PropTypes.string.isRequired,
       description: PropTypes.string,
       id: PropTypes.number.isRequired,
-      price: PropTypes.number.isRequired,
+      price: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       year: PropTypes.number.isRequired

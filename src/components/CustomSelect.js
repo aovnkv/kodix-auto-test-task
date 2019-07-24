@@ -3,7 +3,7 @@ import './CustomSelect.scss';
 
 class CustomSelect extends Component {
   state = {
-    selectedItem: '',
+    selectedItem: this.props.status,
     showItems: false
   };
 
@@ -11,7 +11,7 @@ class CustomSelect extends Component {
     this.setState(prevState => ({ showItems: !prevState.showItems }));
 
   selectItem = item => {
-    this.setState({ selectedItem: item.value, showItems: false });
+    this.setState({ showItems: false });
     this.props.selectItem(item.value);
   };
 
