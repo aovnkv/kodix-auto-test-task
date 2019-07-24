@@ -1,5 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
+import 'core-js/es/map';
+import 'core-js/es/set';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
