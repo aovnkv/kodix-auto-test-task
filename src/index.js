@@ -3,18 +3,19 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-//import { createLogger } from 'redux-logger';
+import 'react-app-polyfill/ie10';
+import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
 
 import reduce from './store/reducers';
-//import { fetchCars } from './store/actions';
+// import { fetchCars } from './store/actions';
 
-//const logger = createLogger();
+const logger = createLogger();
 const store = createStore(
   // combineReducers({ reduce }),
   reduce,
-  applyMiddleware(thunk)
+  applyMiddleware(thunk, logger)
 );
 
 //store.dispatch(fetchCars()).then(() => console.log(store.getState()));
