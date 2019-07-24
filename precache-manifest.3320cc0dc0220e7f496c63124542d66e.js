@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a4467026757bc3a2e5eb60d6f5ce81e",
+    "revision": "76c6c74c0460386aa1903d8822334a1d",
     "url": "/kodix-ultimate-test/index.html"
   },
   {
-    "revision": "5506f42e9d75c03993f5",
+    "revision": "7fca6a8ca4fd8668cbe1",
     "url": "/kodix-ultimate-test/static/css/2.44b4c1e5.chunk.css"
   },
   {
-    "revision": "6ab6eab1705469f9e2d2",
+    "revision": "ce074c48619d5c59736f",
     "url": "/kodix-ultimate-test/static/css/main.bb9b82a2.chunk.css"
   },
   {
-    "revision": "5506f42e9d75c03993f5",
-    "url": "/kodix-ultimate-test/static/js/2.0ec6295e.chunk.js"
+    "revision": "7fca6a8ca4fd8668cbe1",
+    "url": "/kodix-ultimate-test/static/js/2.72cb888b.chunk.js"
   },
   {
-    "revision": "6ab6eab1705469f9e2d2",
-    "url": "/kodix-ultimate-test/static/js/main.eee2b76b.chunk.js"
+    "revision": "ce074c48619d5c59736f",
+    "url": "/kodix-ultimate-test/static/js/main.2f66f046.chunk.js"
   },
   {
     "revision": "d7da7b91eb5f81fdaa7d",
